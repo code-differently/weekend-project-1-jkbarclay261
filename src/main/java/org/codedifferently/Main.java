@@ -10,16 +10,18 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter your name: ");
-        String name = scanner.next();
+        String name = scanner.nextLine();
 
         System.out.print("Enter your budget: ");
        double Budget = scanner.nextDouble();
-
 
         System.out.println("Enter a coupon code: ");
         String code = scanner.next();
 
 
+
+        /*int idNumber = randomGenerator.randomVisitID();
+        System.out.println(idNumber);
 
 
 
