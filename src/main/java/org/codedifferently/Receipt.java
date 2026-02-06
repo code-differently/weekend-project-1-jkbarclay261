@@ -1,4 +1,4 @@
 package org.codedifferently;
 
-public class Strings {
+public class Receipt {
 }
