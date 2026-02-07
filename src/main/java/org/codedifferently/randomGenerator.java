@@ -1,9 +1,7 @@
 package org.codedifferently;
 
 import java.util.Random;
-
 //Your program must generate random values for:
-//
 //A visit ID (example range: 1000–9999)
 //Three item prices (you decide realistic ranges)
 //A tax rate, fee
@@ -23,6 +21,9 @@ public class randomGenerator {
      public static double taxRate() {
        return 0.0 + 0.25 * randomMethods.nextDouble();
     }
+    public static double subtotal(double price1, double price2, double price3){
+        return price1 + price2 + price3 * taxRate();
+    }
 
     public static void main(String[] args) {
         int visitID = randomVisitID();
@@ -30,14 +31,16 @@ public class randomGenerator {
         double price2 = itemPrice(2);
         double price3 = itemPrice(3);
         double tax = taxRate();
+        double subTotal = subtotal(price1, price2, price3);
 
         System.out.println("-----Welcome to JKB's store-----");
-
         System.out.println("Visit ID: " + visitID);
         System.out.println("Item 1 Price: $" + String.format("%.2f", price1));
         System.out.println("Item 2 Price: $" + String.format("%.2f", price2));
         System.out.println("Item 3 Price: $" + String.format("%.2f", price3));
         System.out.println("Tax Rate: " + String.format("%.2f", tax * 100) + "%");
+        System.out.println("Subtotal: $" + String.format("%.2f", subTotal));
+        System.out.println("Total: $" + String.format("%.2f", subTotal));
 
     }
 }

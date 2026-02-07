@@ -28,6 +28,7 @@ public class Main {
             double price2 = itemPrice(2);
             double price3 = itemPrice(3);
             double tax = taxRate();
+            double subTotal = subtotal(price1, price2, price3);
 
             System.out.println("-----Welcome to JKB's store-----");
 
