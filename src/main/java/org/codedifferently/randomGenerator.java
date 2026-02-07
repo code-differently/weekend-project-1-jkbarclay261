@@ -10,15 +10,9 @@ import java.util.Random;
 public class randomGenerator {
     public static Random randomMethods = new Random();
     //A visit ID (example range: 1000–9999)
-
-   public static int randomVisitID(){
-       return randomMethods.nextInt(9999) + 1000;
+    public static int randomVisitID(){
+       return randomMethods.nextInt(9000) + 1000;
    }
-
-   public static int length( int randomVisitID) {
-       return Integer.toString(randomVisitID).length();
-   }
-
     public static double itemPrice (double itemNumber){
 // Creating method random item prices
        double minPrice = 0.99;
@@ -31,19 +25,25 @@ public class randomGenerator {
 
 
     }
+
+    public static void main(String[] args) {
+        int visitID = randomVisitID();
+        double price1 = itemPrice(1);
+        double price2 = itemPrice(2);
+        double price3 = itemPrice(3);
+        double tax = taxRate();
+
+        System.out.println("-----Welcome to JKB's store-----");
+
+        System.out.println("Visit ID: " + visitID);
+        System.out.println("Item 1 Price: $" + String.format("%.2f", price1));
+        System.out.println("Item 2 Price: $" + String.format("%.2f", price2));
+        System.out.println("Item 3 Price: $" + String.format("%.2f", price3));
+        System.out.println("Tax Rate: " + String.format("%.2f", tax * 100) + "%");
+
+    }
 }
-//Reassigning the methods to call later in main
-     //  public static void main (String[] args) {
-       //     int visitID =  randomGenerator.randomVisitID();
-            //int idLength = randomGenerator.length(randomVisitID);
-         //   double price1 = randomGenerator.itemPrice(1);
-           // double price2 = randomGenerator.itemPrice(2);
-            //double price3 = randomGenerator.itemPrice(3);
-            //double tax = randomGenerator.taxRate();
 
-
-        //}
-       // Visit ID (1000–9999)
 
 
 
