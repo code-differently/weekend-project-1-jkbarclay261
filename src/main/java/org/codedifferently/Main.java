@@ -2,6 +2,8 @@ package org.codedifferently;
 
 import java.util.Scanner;
 
+import static org.codedifferently.randomGenerator.*;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -19,10 +21,23 @@ public class Main {
         String code = scanner.next();
 
 
+        Object receipt;
+        String[] strings = args;{
+            int visitID = randomVisitID();
+            double price1 = itemPrice(1);
+            double price2 = itemPrice(2);
+            double price3 = itemPrice(3);
+            double tax = taxRate();
 
+            System.out.println("-----Welcome to JKB's store-----");
 
+            System.out.println("Visit ID: " + visitID);
+            System.out.println("Item 1 Price: $" + String.format("%.2f", price1));
+            System.out.println("Item 2 Price: $" + String.format("%.2f", price2));
+            System.out.println("Item 3 Price: $" + String.format("%.2f", price3));
+            System.out.println("Tax Rate: " + String.format("%.2f", tax * 100) + "%");
 
-
+        }
 
     }
 

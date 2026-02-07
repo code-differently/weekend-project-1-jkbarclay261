@@ -22,8 +22,6 @@ public class randomGenerator {
  // Creating a method to generate a rate ranging 0.0 to 0.25
      public static double taxRate() {
        return 0.0 + 0.25 * randomMethods.nextDouble();
-
-
     }
 
     public static void main(String[] args) {
