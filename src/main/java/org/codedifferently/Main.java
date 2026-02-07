@@ -20,8 +20,7 @@ public class Main {
 
 
 
-        /*int idNumber = randomGenerator.randomVisitID();
-        System.out.println(idNumber);
+
 
 
 
