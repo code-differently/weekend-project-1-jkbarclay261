@@ -28,16 +28,16 @@ public class Main {
             double price2 = itemPrice(2);
             double price3 = itemPrice(3);
             double tax = taxRate();
-            double subTotal = subtotal(price1, price2, price3);
+            double subTotal = subtotal(itemPrice(1), itemPrice(2), itemPrice(3));
 
             System.out.println("-----Welcome to JKB's store-----");
-
-            System.out.println("Visit ID: " + visitID);
-            System.out.println("Item 1 Price: $" + String.format("%.2f", price1));
-            System.out.println("Item 2 Price: $" + String.format("%.2f", price2));
-            System.out.println("Item 3 Price: $" + String.format("%.2f", price3));
+            System.out.println("Visit ID: " + name+ visitID);
+            System.out.println("Item 1 Price: $" + String.format("%.2f", itemPrice(1)));
+            System.out.println("Item 2 Price: $" + String.format("%.2f", itemPrice(2)));
+            System.out.println("Item 3 Price: $" + String.format("%.2f", itemPrice(3)));
+            System.out.println("Subtotal: $" + String.format("%.2f", subTotal));
             System.out.println("Tax Rate: " + String.format("%.2f", tax * 100) + "%");
-
+            System.out.println("Total: $" + String.format("%.2f", (subTotal + tax) + subTotal));
         }
 
     }

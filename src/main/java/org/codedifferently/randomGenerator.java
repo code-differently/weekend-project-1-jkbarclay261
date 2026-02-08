@@ -17,30 +17,33 @@ public class randomGenerator {
        double maxPrice = 99.99;
        return minPrice + (maxPrice - minPrice) * randomMethods.nextDouble();
        }
- // Creating a method to generate a rate ranging 0.0 to 0.25
+ // Creating a method to generate a rate 0.0 to 0.25 (2%)
      public static double taxRate() {
-       return 0.0 + 0.25 * randomMethods.nextDouble();
+       return 0.00 + 0.25 * randomMethods.nextDouble();
     }
     public static double subtotal(double price1, double price2, double price3){
-        return price1 + price2 + price3 * taxRate();
-    }
+        return itemPrice(1) + itemPrice(2) + itemPrice(3) + taxRate();
 
+    }
+    //public static double applyDiscount(double subtotal){
+      //  return subtotal - 5;
+    //}
     public static void main(String[] args) {
         int visitID = randomVisitID();
         double price1 = itemPrice(1);
         double price2 = itemPrice(2);
         double price3 = itemPrice(3);
         double tax = taxRate();
-        double subTotal = subtotal(price1, price2, price3);
+        double subTotal = price1 + price2 + price3;
 
         System.out.println("-----Welcome to JKB's store-----");
         System.out.println("Visit ID: " + visitID);
-        System.out.println("Item 1 Price: $" + String.format("%.2f", price1));
-        System.out.println("Item 2 Price: $" + String.format("%.2f", price2));
-        System.out.println("Item 3 Price: $" + String.format("%.2f", price3));
-        System.out.println("Tax Rate: " + String.format("%.2f", tax * 100) + "%");
+        System.out.println("Item 1 Price: $" + String.format("%.2f", itemPrice(1)));
+        System.out.println("Item 2 Price: $" + String.format("%.2f", itemPrice(2)));
+        System.out.println("Item 3 Price: $" + String.format("%.2f", itemPrice(3)));
         System.out.println("Subtotal: $" + String.format("%.2f", subTotal));
-        System.out.println("Total: $" + String.format("%.2f", subTotal));
+        System.out.println("Tax Rate: " + String.format("%.2f", tax * 100) + "%");
+        System.out.println("Total: $" + String.format("%.2f", (subTotal + tax) + subTotal));
 
     }
 }
