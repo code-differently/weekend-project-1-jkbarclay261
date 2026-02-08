@@ -8,21 +8,22 @@ import static org.codedifferently.randomGenerator.*;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
+        //Create a scanner for user aka customer inout
         Scanner scanner = new Scanner(System.in);
-
+        //Ask for customers name
         System.out.print("Enter your name: ");
         String name = scanner.nextLine();
-
+        //Ask for customers budget
         System.out.print("Enter your budget: ");
-       double Budget = scanner.nextDouble();
-
+        double Budget = scanner.nextDouble();
+        //Ask for coupon code
         System.out.println("Enter a coupon code: ");
         String code = scanner.next();
 
 
         Object receipt;
-        String[] strings = args;{
+        String[] strings = args;
+        {
             int visitID = randomVisitID();
             double price1 = itemPrice(1);
             double price2 = itemPrice(2);
@@ -41,12 +42,11 @@ public class Main {
             System.out.println("Tax Rate: " + String.format("%.2f", tax * 100) + "%");
             System.out.println("Total: $" + String.format("%.2f", total));
 
+
         }
 
     }
 
 
-
-
-    }
+}
 
