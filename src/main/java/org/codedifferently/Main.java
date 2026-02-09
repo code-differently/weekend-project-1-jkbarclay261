@@ -12,7 +12,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         //Ask for customers name
 
-        System.out.print("Enter your name: ");
+        System.out.print("Enter your first name: ");
         String name = scanner.nextLine();
         //Ask for customers budget
 
@@ -20,13 +20,9 @@ public class Main {
         double budget = scanner.nextDouble();
 
         budget = Math.max(budget, 0);
-
-        //System.out.print("Enter your budget: ");
-        //double Budget = scanner.nextDouble();
         //Ask for coupon code
         System.out.println("Enter a coupon code: ");
         String code = scanner.next();
-
 
         Object receipt;
         String[] strings = args;
@@ -62,11 +58,11 @@ public class Main {
             System.out.println("  ");
             System.out.println("----Thank You for Shopping with Us! ");
             System.out.println("                 ");
+            System.out.println("----Checkout our website: JKBsOneStop.com----");
+            System.out.println("  ");
             System.out.println("---Come Again---");
             scanner.close();
 
-            // System.out.println("Tax Rate: " + String.format("%.2f", tax * 100) + "%");
-            //System.out.println("Total: $" + String.format("%.2f", total));
 
 
         }
