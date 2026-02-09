@@ -25,7 +25,6 @@ public class randomGenerator {
         return price1 + price2 + price3;
     }
 
-
     public static void main(String[] args) {
         int visitID = randomVisitID();
         double price1 = itemPrice(1);

@@ -11,11 +11,18 @@ public class Main {
         //Create a scanner for user aka customer inout
         Scanner scanner = new Scanner(System.in);
         //Ask for customers name
+
         System.out.print("Enter your name: ");
         String name = scanner.nextLine();
         //Ask for customers budget
-        System.out.print("Enter your budget: ");
-        double Budget = scanner.nextDouble();
+
+        System.out.print("Enter your budget: $");
+        double budget = scanner.nextDouble();
+
+        budget = Math.max(budget, 0);
+
+        //System.out.print("Enter your budget: ");
+        //double Budget = scanner.nextDouble();
         //Ask for coupon code
         System.out.println("Enter a coupon code: ");
         String code = scanner.next();
@@ -33,14 +40,33 @@ public class Main {
             double total = subTotal + (subTotal * tax);
 
 
-            System.out.println("-----Welcome to JKB's store-----");
+            System.out.println("-----Welcome to JKB's One stop Shop store-----");
+            System.out.println(" ");
+            System.out.println(" ");
             System.out.println("Visit ID: " + name + visitID);
             System.out.println("Item 1 Price: $" + String.format("%.2f", price1));
             System.out.println("Item 2 Price: $" + String.format("%.2f", price2));
             System.out.println("Item 3 Price: $" + String.format("%.2f", price3));
             System.out.println("Subtotal: $" + String.format("%.2f", subTotal));
-            System.out.println("Tax Rate: " + String.format("%.2f", tax * 100) + "%");
-            System.out.println("Total: $" + String.format("%.2f", total));
+            System.out.println("Budget: $" + String.format("%.2f", budget));
+            System.out.println("Final Total: $" + String.format("%.2f", total));
+
+            if (total > budget) {
+                System.out.println("⚠️ Budget exceeded!");
+                System.out.println("Amount over budget: $" +
+                        String.format("%.2f", total - budget));
+            } else {
+                System.out.println("Remaining Balance: $" +
+                        String.format("%.2f", budget - total));
+            }
+            System.out.println("  ");
+            System.out.println("----Thank You for Shopping with Us! ");
+            System.out.println("                 ");
+            System.out.println("---Come Again---");
+            scanner.close();
+
+            // System.out.println("Tax Rate: " + String.format("%.2f", tax * 100) + "%");
+            //System.out.println("Total: $" + String.format("%.2f", total));
 
 
         }
